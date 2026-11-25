@@ -1,0 +1,296 @@
+{
+  ".codex/hooks.json": {
+    "mtime": 1792860399.835448,
+    "seen": 1792860455.1735508,
+    "ast_hash": "5ebef3dd159986e465ab65e4014107ec",
+    "semantic_hash": "5ebef3dd159986e465ab65e4014107ec"
+  },
+  ".vscode/launch.json": {
+    "mtime": 1790767252.2403111,
+    "seen": 1792860455.1735508,
+    "ast_hash": "09ff389c0f48a7c8dec612a5eb787c61",
+    "semantic_hash": "09ff389c0f48a7c8dec612a5eb787c61"
+  },
+  "backend/migrate.js": {
+    "mtime": 1794979777.0875535,
+    "seen": 1794979919.451243,
+    "ast_hash": "d3ec71bdf598c1aa7ac25ba2027f4e27",
+    "semantic_hash": ""
+  },
+  "backend/server.js": {
+    "mtime": 1795423613.6351576,
+    "seen": 1795423630.5775511,
+    "ast_hash": "104ce2e13c00c980dec1950e3ed04f8e",
+    "semantic_hash": ""
+  },
+  "frontend/app.js": {
+    "mtime": 1795423462.8669546,
+    "seen": 1795423485.948899,
+    "ast_hash": "e0e1d3b64ff59907160b5e1779e9e3d9",
+    "semantic_hash": ""
+  },
+  "package.json": {
+    "mtime": 1794981546.040416,
+    "seen": 1794981669.5379393,
+    "ast_hash": "a5fa351410ba09f5836dd931640e7d2d",
+    "semantic_hash": ""
+  },
+  "serve.ps1": {
+    "mtime": 1783220681.2656987,
+    "seen": 1792860455.1735508,
+    "ast_hash": "570cbedf336f5180d044185f8d5f0460",
+    "semantic_hash": "570cbedf336f5180d044185f8d5f0460"
+  },
+  "serve_node.js": {
+    "mtime": 1795419373.1785703,
+    "seen": 1795419391.4170866,
+    "ast_hash": "c9232ed8f045cfdadd455bc13eb31f22",
+    "semantic_hash": ""
+  },
+  "AGENTS.md": {
+    "mtime": 1792860399.8340218,
+    "seen": 1793944109.7268836,
+    "ast_hash": "f36539ecc9af68f33ebd72770ce4a19e",
+    "semantic_hash": ""
+  },
+  "PROJECT_STRUCTURE.md": {
+    "mtime": 1791549218.2326002,
+    "seen": 1793944109.7268836,
+    "ast_hash": "cc07a40d4d90ab7b1ef5bb83a477be72",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1791549217.7889943,
+    "seen": 1793944109.7268836,
+    "ast_hash": "df8272aa8773247f7b5a9376288cbebd",
+    "semantic_hash": ""
+  },
+  "authentication/README.md": {
+    "mtime": 1793951388.22525,
+    "seen": 1793951446.0072324,
+    "ast_hash": "c946929857acafa0ae8fc6ad61c0f60f",
+    "semantic_hash": ""
+  },
+  "backend/README.md": {
+    "mtime": 1791549218.68808,
+    "seen": 1793944109.7268836,
+    "ast_hash": "74d7e8b339b1d21a080fef2833ec9a13",
+    "semantic_hash": ""
+  },
+  "database/schema.md": {
+    "mtime": 1782642864.6079583,
+    "seen": 1793944109.7268836,
+    "ast_hash": "1acaff49937d4c2c51194df8d29425df",
+    "semantic_hash": ""
+  },
+  "deployment-hosting/README.md": {
+    "mtime": 1782642902.9579859,
+    "seen": 1793944109.7268836,
+    "ast_hash": "15cafe8b1516529dcf9a0595006848ad",
+    "semantic_hash": ""
+  },
+  "documents-storage/README.md": {
+    "mtime": 1793951616.2388697,
+    "seen": 1793951653.0652528,
+    "ast_hash": "58951eb26758614d304ba1a03072eb33",
+    "semantic_hash": ""
+  },
+  "frontend/index.html": {
+    "mtime": 1795423463.410175,
+    "seen": 1795423485.9579327,
+    "ast_hash": "ef33b03b833af59685f1761d194c0f27",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1783221478.3046205,
+    "seen": 1793944109.7268836,
+    "ast_hash": "4bffb0a934eeedca4d6f6b42c6b9e036",
+    "semantic_hash": ""
+  },
+  "reporting-charts/README.md": {
+    "mtime": 1793951630.6689956,
+    "seen": 1793951653.0662735,
+    "ast_hash": "6c532529bfa34dbeb8e7e0d04ebd5e9c",
+    "semantic_hash": ""
+  },
+  "search-engine/README.md": {
+    "mtime": 1793951309.9846997,
+    "seen": 1793951326.2548344,
+    "ast_hash": "47fa7efec9956d5a5bd64080ed55dff9",
+    "semantic_hash": ""
+  },
+  "assets/mabini-colleges-logo.jpg": {
+    "mtime": 1782640801.899372,
+    "seen": 1793944109.7268836,
+    "ast_hash": "19ce5548f4b04b734d58daedb82b2ba9",
+    "semantic_hash": ""
+  },
+  "frontend/assets/mabini-colleges-logo.jpg": {
+    "mtime": 1782640801.899372,
+    "seen": 1793944109.7268836,
+    "ast_hash": "19ce5548f4b04b734d58daedb82b2ba9",
+    "semantic_hash": ""
+  },
+  "search-engine/index.js": {
+    "mtime": 1793951258.3784485,
+    "seen": 1793951326.2518322,
+    "ast_hash": "6a2021aaef512c231ba52f92af9748da",
+    "semantic_hash": ""
+  },
+  "backend/reindex-search.js": {
+    "mtime": 1793945446.0804262,
+    "seen": 1793945493.646772,
+    "ast_hash": "63df2dae295a42d576c153ada3739ea1",
+    "semantic_hash": ""
+  },
+  "search-engine/ocr.js": {
+    "mtime": 1793946138.3705964,
+    "seen": 1793946264.8463411,
+    "ast_hash": "a05fb095dce5251774a488c2aace1923",
+    "semantic_hash": ""
+  },
+  "search-engine/plagiarism.js": {
+    "mtime": 1793951281.0036223,
+    "seen": 1793951326.2528365,
+    "ast_hash": "54d481ecd14c3783212e1c989937a5f6",
+    "semantic_hash": ""
+  },
+  "search-engine/citations.js": {
+    "mtime": 1793951259.1698081,
+    "seen": 1793951326.2518322,
+    "ast_hash": "76d4a096221506ff691da1e930f30410",
+    "semantic_hash": ""
+  },
+  "backend/processing-worker.js": {
+    "mtime": 1794980514.6260314,
+    "seen": 1794980555.061194,
+    "ast_hash": "204450a5ee6e0f605c25a4fe58699985",
+    "semantic_hash": ""
+  },
+  "backend/backup.js": {
+    "mtime": 1793950899.602065,
+    "seen": 1793950939.9256628,
+    "ast_hash": "c12a00d0ee5a585ba8725f5409deca4f",
+    "semantic_hash": ""
+  },
+  "compliance/README.md": {
+    "mtime": 1793950920.0712419,
+    "seen": 1793950939.9281416,
+    "ast_hash": "57b2ba3685c50f043400116e43e3261c",
+    "semantic_hash": ""
+  },
+  "search-engine/metadata.js": {
+    "mtime": 1793951258.7630973,
+    "seen": 1793951326.2518322,
+    "ast_hash": "a1682b2a3f9a9d11e6e6309d55cc9962",
+    "semantic_hash": ""
+  },
+  "backend/file-scanner.js": {
+    "mtime": 1793951352.3241727,
+    "seen": 1793951446.0042334,
+    "ast_hash": "fc3f750c0c136014af07e51c30504a19",
+    "semantic_hash": ""
+  },
+  "tests/ai-security.test.js": {
+    "mtime": 1793951411.8244095,
+    "seen": 1793951446.0072324,
+    "ast_hash": "78d05eb90a2a950fa84292a15833cef2",
+    "semantic_hash": ""
+  },
+  "docs/PRIVACY_POLICY_TEMPLATE.md": {
+    "mtime": 1793951436.864329,
+    "seen": 1793951446.0082326,
+    "ast_hash": "3e07dc62827e58c298b2e71d2cf20ccd",
+    "semantic_hash": ""
+  },
+  "docs/USABILITY_EVALUATION.md": {
+    "mtime": 1793951891.5913465,
+    "seen": 1793951896.573438,
+    "ast_hash": "852bb8c6ef3d86de9d427f5dafb8f1a0",
+    "semantic_hash": ""
+  },
+  "docs/USER_MANUAL.md": {
+    "mtime": 1793951436.4812515,
+    "seen": 1793951446.0082326,
+    "ast_hash": "04ee122a5752d5d3b5bcb65b852c5e9e",
+    "semantic_hash": ""
+  },
+  "backend/backup-verify.js": {
+    "mtime": 1793951593.1881678,
+    "seen": 1793951653.0612319,
+    "ast_hash": "e99ae377bc21858e67683db061ef4774",
+    "semantic_hash": ""
+  },
+  "backend/config-check.js": {
+    "mtime": 1794979819.2284818,
+    "seen": 1794979919.451243,
+    "ast_hash": "76b51b60572ce4e98a258fe3d2d5e668",
+    "semantic_hash": ""
+  },
+  "backend/restore.js": {
+    "mtime": 1793951615.5291536,
+    "seen": 1793951653.062238,
+    "ast_hash": "d5d19376763afe68a3a7e9cfa910e43c",
+    "semantic_hash": ""
+  },
+  "docs/EXTERNAL_SERVICES_SETUP.md": {
+    "mtime": 1793952007.1974156,
+    "seen": 1793952013.1590788,
+    "ast_hash": "97dd235e38b005250030b5d5f4f99be3",
+    "semantic_hash": ""
+  },
+  "backend/create-user.js": {
+    "mtime": 1794979888.2933366,
+    "seen": 1794979919.451243,
+    "ast_hash": "f3acd29681abab5b9b72d3d6b7a8feae",
+    "semantic_hash": ""
+  },
+  "deployment-hosting/PRIVATE_PILOT_RUNBOOK.md": {
+    "mtime": 1794980391.8523045,
+    "seen": 1794980555.0652032,
+    "ast_hash": "c56db6f41e6f08d31c43afaa92c9d87f",
+    "semantic_hash": ""
+  },
+  "docker-compose.yml": {
+    "mtime": 1794979889.7636678,
+    "seen": 1794979919.4547937,
+    "ast_hash": "576a39ae8bfe435ddb4cbfa4aee4f7a3",
+    "semantic_hash": ""
+  },
+  "docs/PILOT_FINDINGS_TEMPLATE.md": {
+    "mtime": 1794979890.9820433,
+    "seen": 1794979919.4547937,
+    "ast_hash": "971c2b0ae76af4de56d6d7e0541824da",
+    "semantic_hash": ""
+  },
+  "AI-Driven-E-Data-Banking-System-for-Thesis-Manuscripts-A-Web-Based-Repository-and-Research-Management-Platform-for-SY-20202026.pdf": {
+    "mtime": 1782557926.3442614,
+    "seen": 1794979919.455793,
+    "ast_hash": "95a029ba20b0ff63b5a6afd69997cffb",
+    "semantic_hash": ""
+  },
+  "scripts/predeploy-check.js": {
+    "mtime": 1794980169.5404649,
+    "seen": 1794980184.1276171,
+    "ast_hash": "5568e3d5ae116fa7dcc11f4ad716c1b7",
+    "semantic_hash": ""
+  },
+  "scripts/workflow-smoke.js": {
+    "mtime": 1795421337.7370286,
+    "seen": 1795421352.9319987,
+    "ast_hash": "6d963554e2d27396ca7ada4684dd5b0f",
+    "semantic_hash": ""
+  },
+  "scripts/password-reset-smoke.js": {
+    "mtime": 1794981167.384683,
+    "seen": 1794981201.8681948,
+    "ast_hash": "52fc98a6fe10608c488d36e0ba22621c",
+    "semantic_hash": ""
+  },
+  "scripts/adviser-registration-smoke.js": {
+    "mtime": 1794981570.9664152,
+    "seen": 1794981669.5379393,
+    "ast_hash": "201192388a35067dc9e330a556c1e7c5",
+    "semantic_hash": ""
+  }
+}

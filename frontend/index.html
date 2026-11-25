@@ -1,0 +1,598 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-Data Banking System</title>
+  <link rel="stylesheet" href="styles.css?v=20261123-2" />
+</head>
+<body>
+  <section class="login-screen" id="loginScreen">
+    <div class="login-brand">
+      <div class="brand">
+          <div class="brand-mark" aria-hidden="true">
+          <img src="assets/mabini-colleges-logo.jpg" alt="Mabini Colleges logo" />
+        </div>
+        <div>
+          <h1>Mabini Colleges</h1>
+          <p>E-Data Banking System</p>
+        </div>
+      </div>
+      <div class="login-copy">
+        <h2>AI-Driven E-Data Banking System for Thesis Manuscripts: A Web-Based Repository and Research Management Platform</h2>
+        <p>A web-based system for thesis manuscript submission, review, search, analytics, and long-term digital storage.</p>
+      </div>
+    </div>
+
+    <div class="login-panel-wrap">
+      <div class="login-panel">
+        <h3>Sign In</h3>
+        <p>Use an authorized account to access the thesis E-Data Banking System.</p>
+        <form class="login-form" id="loginForm">
+          <input class="field" id="loginUsername" type="text" placeholder="Username" autocomplete="username" required />
+          <input class="field" id="loginPassword" type="password" placeholder="Password" autocomplete="current-password" required />
+          <button class="dark-btn" type="submit">Log In</button>
+          <div class="login-status" id="loginStatus" role="status" aria-live="polite"></div>
+        </form>
+        <div class="register-prompt">
+          No account yet? <button class="text-link" type="button" id="openRegister">Register</button>
+          as a student researcher.
+        </div>
+        <div class="register-prompt reset-prompt">
+          Forgot your password? <button class="text-link" type="button" id="openPasswordReset">Reset it here</button>.
+        </div>
+        <div class="login-demo">
+          <span>Use the account issued by the system administrator.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <img src="assets/mabini-colleges-logo.jpg" alt="Mabini Colleges logo" />
+        </div>
+        <div>
+          <h1>Mabini Colleges</h1>
+          <p>Thesis Digital Repository</p>
+        </div>
+      </div>
+
+      <p class="menu-title">Main Menu</p>
+      <nav class="nav" aria-label="Main navigation">
+        <button class="active" data-view="dashboard">
+          <span><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7" /><path d="M5 10v10h14V10" /><path d="M9 20v-6h6v6" /></svg></span>
+          Dashboard
+          <span></span>
+        </button>
+        <button data-view="repository">
+          <span><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" /><path d="M8 7h8" /><path d="M8 11h6" /></svg></span>
+          Repository
+          <span class="pill" data-count="archived">0</span>
+        </button>
+        <button data-view="submission" data-role="student_researcher">
+          <span><svg viewBox="0 0 24 24"><path d="M12 16V4" /><path d="M7 9l5-5 5 5" /><path d="M5 16v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3" /></svg></span>
+          Submission
+          <span class="pill" data-count="pending">0</span>
+        </button>
+        <button data-view="ai">
+          <span><svg viewBox="0 0 24 24"><path d="M12 2v3" /><path d="M12 19v3" /><path d="M2 12h3" /><path d="M19 12h3" /><circle cx="12" cy="12" r="4" /></svg></span>
+          AI Tools
+          <span></span>
+        </button>
+        <button data-view="analytics">
+          <span><svg viewBox="0 0 24 24"><path d="M4 19V5" /><path d="M4 19h16" /><path d="M8 16v-5" /><path d="M12 16V8" /><path d="M16 16v-9" /></svg></span>
+          Analytics
+          <span></span>
+        </button>
+        <button data-view="security">
+          <span><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /><path d="M9 12l2 2 4-5" /></svg></span>
+          Security
+          <span></span>
+        </button>
+      </nav>
+
+      <div class="account-card">
+        <div class="account">
+            <div class="avatar">AA</div>
+          <div>
+            <strong data-current-user-name>Archive Admin</strong>
+            <span data-current-user-role>E-Data Banking System</span>
+          </div>
+        </div>
+        <div class="archive-progress">
+          <div class="progress-row"><span>Digitization Progress</span><span data-percent="digitization">0%</span></div>
+          <div class="progress"><span data-progress="digitization" style="width: 0%;"></span></div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        <h2 id="pageTitle">Dashboard</h2>
+        <label class="search">
+          <input id="globalSearch" type="search" list="searchSuggestions" placeholder="Search thesis, author, keyword..." />
+          <datalist id="searchSuggestions"></datalist>
+          <span class="search-icon" aria-hidden="true"></span>
+        </label>
+        <div class="top-actions">
+          <div class="notification-wrap">
+            <button class="icon-btn" id="notificationButton" type="button" aria-label="Notifications" aria-expanded="false">
+              <svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9" /><path d="M13.73 21a2 2 0 0 1-3.46 0" /></svg>
+              <span class="count" id="notificationCount">0</span>
+            </button>
+            <div class="notification-menu" id="notificationMenu">
+              <div class="notification-head">
+                <strong>Notifications</strong>
+                <span class="badge" id="notificationTotal">0 new</span>
+              </div>
+              <div class="notification-list" id="notificationList">
+                <div class="notification-empty">No notifications yet.</div>
+              </div>
+            </div>
+          </div>
+          <button class="light-btn" id="logoutButton" type="button">Logout</button>
+          <div class="avatar" data-current-user-initials>RA</div>
+        </div>
+      </header>
+
+      <div class="content">
+        <section class="view active" id="dashboard">
+          <div class="dashboard-grid">
+            <div class="stack">
+              <div class="hero">
+                <div>
+                  <h3>AI-Driven E-Data Banking System for Thesis Manuscripts</h3>
+                  <p>A web-based repository for discovering, preserving, and providing controlled access to academic manuscripts.</p>
+                </div>
+                <div class="hero-art" aria-hidden="true">
+                  <div class="ai-chip">AI Search</div>
+                  <div class="search-ring"></div>
+                  <div class="doc-stack"></div>
+                </div>
+              </div>
+
+              <div class="card panel">
+                <div class="panel-head">
+                  <div>
+                    <h4>Thesis Submission Workflow</h4>
+                    <p>Tracks documents from upload to AI checking, faculty approval, and final archiving.</p>
+                  </div>
+                  <span class="badge">Active</span>
+                </div>
+                <div class="workflow">
+                  <div class="step dashboard-link" data-dashboard-view="submission" role="button" tabindex="0" aria-label="Open manuscript submission">
+                    <div class="step-num">1</div>
+                    <div><strong>Manuscript Upload</strong><p>Students submit PDF, abstract, authors, adviser, category, school year, and keywords.</p></div>
+                    <span class="badge good">Done</span>
+                  </div>
+                  <div class="step dashboard-link" data-dashboard-view="ai" role="button" tabindex="0" aria-label="Open AI tools">
+                    <div class="step-num">2</div>
+                    <div><strong>AI Metadata and Similarity Check</strong><p>System extracts title, authors, keywords, references, and checks possible duplicate content.</p></div>
+                    <span class="badge good">Ready</span>
+                  </div>
+                  <div class="step dashboard-link" data-dashboard-view="repository" data-dashboard-status="For Review" role="button" tabindex="0" aria-label="View manuscripts for review">
+                    <div class="step-num">3</div>
+                    <div><strong>Faculty Review and Revision</strong><p>Reviewers validate citation consistency, originality score, and required revisions.</p></div>
+                    <span class="badge warn"><span data-count="pending">0</span> pending</span>
+                  </div>
+                  <div class="step dashboard-link" data-dashboard-view="repository" data-dashboard-status="Approved" role="button" tabindex="0" aria-label="View approved manuscripts">
+                    <div class="step-num">4</div>
+                    <div><strong>Admin Publication</strong><p>After adviser approval, the admin publishes the thesis to the searchable repository.</p></div>
+                    <span class="badge">Next</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="stack">
+              <div class="metrics">
+                <div class="card metric dashboard-link" data-dashboard-view="repository" data-dashboard-status="Archived" role="button" tabindex="0" aria-label="View archived manuscripts">
+                  <h4>Archived Manuscripts</h4>
+                  <strong data-count="archived">0</strong>
+                  <small><span class="trend" data-count="added">0</span> added this school year</small>
+                  <div class="mini-bars" aria-hidden="true"><span style="height: 0%;"></span><span style="height: 0%;"></span><span style="height: 0%;"></span><span style="height: 0%;"></span><span style="height: 0%;"></span></div>
+                </div>
+                <div class="card metric dashboard-link" data-dashboard-view="repository" data-dashboard-status="For Review" role="button" tabindex="0" aria-label="View pending approvals">
+                  <h4>Pending Approvals</h4>
+                  <strong data-count="pending">0</strong>
+                  <small><span class="trend warn" data-count="reviews">0</span> assigned faculty reviews</small>
+                  <div class="progress"><span data-progress="pending" style="width: 0%;"></span></div>
+                </div>
+                <div class="card metric dashboard-link" data-dashboard-view="ai" role="button" tabindex="0" aria-label="Open AI tools">
+                  <h4>Originality Average</h4>
+                  <strong data-percent="originality">0%</strong>
+                  <small>Plagiarism and similarity engine</small>
+                  <div class="progress"><span data-progress="originality" style="width: 0%;"></span></div>
+                </div>
+                <div class="card metric dashboard-link" data-dashboard-view="repository" role="button" tabindex="0" aria-label="View research categories">
+                  <h4>Research Categories</h4>
+                  <strong data-count="categories">0</strong>
+                  <small>Tagged for semantic search</small>
+                  <div class="mini-bars" aria-hidden="true"><span style="height: 0%;"></span><span style="height: 0%;"></span><span style="height: 0%;"></span><span style="height: 0%;"></span><span style="height: 0%;"></span></div>
+                </div>
+              </div>
+              <div class="card panel" data-role="admin">
+                <div class="panel-head">
+                  <div>
+                    <h4>Approved for Publication</h4>
+                    <p>Theses approved by an adviser are waiting for admin publication.</p>
+                  </div>
+                  <span class="badge warn">Admin action</span>
+                </div>
+                <div class="list" id="dashboardPublishQueue">
+                  <div class="empty-state">Approved theses will appear here for publication.</div>
+                </div>
+              </div>
+
+              <div class="card panel">
+                <div class="panel-head">
+                  <div>
+                    <h4>Recent Thesis Activity</h4>
+                    <p>Latest system records from repository, AI checks, and approval workflow.</p>
+                  </div>
+                </div>
+                <div class="table-wrap">
+                  <table>
+                    <thead>
+                      <tr><th>Title</th><th>Author</th><th>Status</th><th>Similarity</th><th>PDF</th></tr>
+                    </thead>
+                    <tbody id="activityBody">
+                      <tr class="empty-row"><td colspan="5">No thesis records yet. Submit a manuscript to add the first entry.</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" id="repository">
+          <div class="generic-grid">
+            <div class="card panel">
+              <div class="panel-head">
+                <div>
+                    <h4>Intelligent Document Repository</h4>
+                  <p>Search thesis manuscripts by title, author, category, school year, keywords, and semantic relevance.</p>
+                </div>
+                <button class="dark-btn" id="repositorySearchButton" type="button">Search</button>
+              </div>
+              <div id="departmentTabsRoot">
+                <div class="department-tabs" role="tablist" aria-label="Filter repository by department">
+                  <button class="department-tab active" type="button" role="tab" aria-selected="true" data-department-tab="">All Departments</button>
+                  <button class="department-tab" type="button" role="tab" aria-selected="false" data-department-tab="CCS">CCS</button>
+                  <button class="department-tab" type="button" role="tab" aria-selected="false" data-department-tab="CED">CED</button>
+                  <button class="department-tab" type="button" role="tab" aria-selected="false" data-department-tab="CBAA">CBAA</button>
+                  <button class="department-tab" type="button" role="tab" aria-selected="false" data-department-tab="CCJE">CCJE</button>
+                  <button class="department-tab" type="button" role="tab" aria-selected="false" data-department-tab="CN">CN</button>
+                </div>
+              </div>
+              <div class="searchbar">
+                <input class="field" id="repositoryQuery" type="search" list="searchSuggestions" placeholder="Search title, author, keyword, or question" />
+                <select class="field department-select" id="repositoryCategory" aria-hidden="true" tabindex="-1"><option value="">All Categories</option><option>CCS</option><option>CED</option><option>CBAA</option><option>CCJE</option><option>CN</option></select>
+                <select class="field" id="repositorySchoolYear"><option value="">All School Years</option><option>2010-2011</option><option>2011-2012</option><option>2012-2013</option><option>2013-2014</option><option>2014-2015</option><option>2015-2016</option><option>2016-2017</option><option>2017-2018</option><option>2018-2019</option><option>2019-2020</option><option>2020-2021</option><option>2021-2022</option><option>2022-2023</option><option>2023-2024</option><option>2024-2025</option><option>2025-2026</option><option>2026-2027</option></select>
+                <select class="field" id="repositoryStatus"><option value="">All Statuses</option><option>For Review</option><option>Revision Requested</option><option>Approved</option><option>Archived</option><option>Rejected</option></select>
+              </div>
+              <div class="list" id="repositoryList">
+                <div class="empty-state">No manuscripts have been added yet.</div>
+              </div>
+              <div class="split-actions repository-pagination" aria-label="Repository pagination">
+                <button class="light-btn" id="previousSearchPage" type="button">Previous</button>
+                <span class="badge" id="searchPageStatus">Page 1 of 1</span>
+                <button class="light-btn" id="nextSearchPage" type="button">Next</button>
+              </div>
+            </div>
+
+            <div class="card panel">
+              <div class="panel-head">
+                <div>
+                  <h4>Repository Features</h4>
+                  <p>Required features from the study objectives, organized around archival description, access, and preservation.</p>
+                </div>
+              </div>
+              <div class="list">
+                <div class="item"><h5>Metadata Tagging</h5><p>Author names, title, abstract, adviser, keywords, category, and school year.</p></div>
+                <div class="item"><h5>Full-Text PDF Storage</h5><p>Secure upload, retrieval, access restriction, and backup for thesis documents.</p></div>
+                <div class="item"><h5>Semantic Search</h5><p>NLP-based searching with synonym handling, autocomplete, and relevance ranking.</p></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" id="submission" data-role="student_researcher">
+          <div class="generic-grid">
+            <div class="stack">
+              <div class="card panel">
+                <div class="panel-head">
+                  <div>
+                    <h4>Thesis Submission Form</h4>
+                    <p>UI for student manuscript upload and faculty review routing.</p>
+                  </div>
+                </div>
+                <form class="form-grid" id="submissionForm">
+                  <input class="field full" id="thesisTitle" type="text" placeholder="Thesis title" required />
+                  <input class="field" id="authors" type="text" placeholder="Author names" required />
+                  <select class="field" id="adviser" required>
+                    <option value="">Select an adviser</option>
+                  </select>
+                  <select class="field" id="category" aria-label="Department" required><option value="">Select department</option><option value="CCS">CCS</option><option value="CED">CED</option><option value="CBAA">CBAA</option><option value="CCJE">CCJE</option><option value="CN">CN</option></select>
+                  <select class="field" id="schoolYear" required><option value="">Select school year</option><option>2010-2011</option><option>2011-2012</option><option>2012-2013</option><option>2013-2014</option><option>2014-2015</option><option>2015-2016</option><option>2016-2017</option><option>2017-2018</option><option>2018-2019</option><option>2019-2020</option><option>2020-2021</option><option>2021-2022</option><option>2022-2023</option><option>2023-2024</option><option>2024-2025</option><option>2025-2026</option><option>2026-2027</option></select>
+                  <textarea class="field full" id="abstract" placeholder="Abstract"></textarea>
+                  <input class="field" id="keywords" type="text" placeholder="Keywords separated by comma" />
+                  <input class="field" id="manuscriptFile" type="file" accept="application/pdf,.pdf" />
+                  <label class="field full checkbox-field"><input id="archivingConsent" type="checkbox" required /> I authorize Mabini Colleges to digitally archive this manuscript for institutional research purposes and acknowledge the privacy and copyright notice.</label>
+                  <div class="split-actions full">
+                    <button type="submit" class="dark-btn">Submit for Review</button>
+                    <button type="button" class="light-btn" id="saveDraft">Save Draft</button>
+                    <button type="button" class="light-btn" id="runPrecheck">Run AI Pre-check</button>
+                  </div>
+                  <div class="form-status full" id="formStatus" role="status" aria-live="polite"></div>
+                </form>
+              </div>
+
+              <div class="card panel">
+                <div class="panel-head">
+                  <div>
+                    <h4>AI-Powered Research Tools</h4>
+                    <p>Pre-check the manuscript before sending it to faculty review.</p>
+                  </div>
+                  <button class="dark-btn" type="button" id="analyzeSubmission">Analyze Manuscript</button>
+                </div>
+                <div class="tool-grid">
+                  <div class="tool-card"><h5>Plagiarism and Originality Checking</h5><p>Detect duplicate, similar, and paraphrased content from uploaded thesis manuscripts.</p><div class="progress"><span data-progress="originality" style="width: 0%;"></span></div><span class="badge good"><span data-percent="originality">0%</span> originality</span></div>
+                  <div class="tool-card"><h5>Citation Recommendation</h5><p>Suggest related studies and APA or MLA citation formats based on topic, keywords, and abstract.</p><span class="badge"><span data-count="suggestions">0</span> suggestions</span></div>
+                  <div class="tool-card full"><h5>Recommended References</h5><div class="list" id="citationRecommendations"><div class="empty-state">Analyze a manuscript to find scholarly references.</div></div></div>
+                  <div class="tool-card"><h5>Semantic Classification</h5><p>Automatically tag manuscripts by discipline, method, keywords, and related concepts.</p><span class="badge" id="classificationBadge">Ready</span></div>
+                  <div class="tool-card"><h5>Similarity and Document Analysis</h5><p>Compare a manuscript against archived research to identify topic overlap and related studies.</p><span class="badge warn"><span data-count="related">0</span> related theses</span></div>
+                  <div class="tool-card full" id="plagiarismReport"><h5>Originality Report</h5><p>Run the pre-check to see matching phrases and source manuscripts from the internal repository.</p><div class="list" id="plagiarismSources"><div class="empty-state">No report generated yet.</div></div></div>
+                  <div class="tool-card heatmap-card">
+                    <button class="heatmap-open" type="button" id="openHeatmap">
+                      <h5>Similarity Heatmap</h5>
+                      <p>View highlighted sections that may need checking before faculty review.</p>
+                      <div class="heatmap-preview" id="heatmapPreview" aria-hidden="true"></div>
+                      <div class="heatmap-scale"><span>Low</span><span></span><span>High</span></div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card panel">
+              <div class="panel-head">
+                <div>
+                  <h4>Approval Tracking</h4>
+                  <p>Revision monitoring and document status history.</p>
+                </div>
+              </div>
+              <div class="workflow">
+                <div class="step"><div class="step-num">1</div><div><strong>Submitted</strong><p>Student uploaded manuscript and metadata.</p></div><span class="badge good">Done</span></div>
+                <div class="step"><div class="step-num">2</div><div><strong>Originality Checked</strong><p>Similarity report generated and attached.</p></div><span class="badge good">Done</span></div>
+                <div class="step"><div class="step-num">3</div><div><strong>Faculty Review</strong><p>Adviser notes and revision requests appear here.</p></div><span class="badge warn">Active</span></div>
+                <div class="step"><div class="step-num">4</div><div><strong>Admin Publication</strong><p>After adviser approval, the admin publishes the thesis to the searchable repository.</p></div><span class="badge">Next</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" id="ai">
+          <div class="card panel">
+            <div class="panel-head">
+              <div>
+                <h4>AI-Powered Research Tools</h4>
+                <p>Tools included in the proposed system: plagiarism checking, citation assistance, semantic search, and document analysis.</p>
+              </div>
+              <button class="dark-btn" type="button" id="analyzeAi">Analyze Manuscript</button>
+            </div>
+            <div class="tool-grid">
+              <div class="tool-card"><h5>Plagiarism and Originality Checking</h5><p>Detect duplicate, similar, and paraphrased content from uploaded thesis manuscripts.</p><div class="progress"><span data-progress="originality" style="width: 0%;"></span></div><span class="badge good"><span data-percent="originality">0%</span> originality</span></div>
+              <div class="tool-card"><h5>Citation Recommendation</h5><p>Suggest related studies and APA or MLA citation formats based on topic, keywords, and abstract.</p><span class="badge"><span data-count="suggestions">0</span> suggestions</span></div>
+              <div class="tool-card full"><h5>Recommended References</h5><div class="list" id="citationRecommendationsAi"><div class="empty-state">Analyze a manuscript to find scholarly references.</div></div></div>
+              <div class="tool-card"><h5>Semantic Classification</h5><p>Automatically tag manuscripts by discipline, method, keywords, and related concepts.</p><span class="badge">NLP enabled</span></div>
+              <div class="tool-card"><h5>Similarity and Document Analysis</h5><p>Compare a manuscript against archived research to identify topic overlap and related studies.</p><span class="badge warn"><span data-count="related">0</span> related theses</span></div>
+              <div class="tool-card full" id="plagiarismReportAi"><h5>Originality Report</h5><p>Results are explainable and show which archived manuscripts share phrases with this submission.</p><div class="list" id="plagiarismSourcesAi"><div class="empty-state">No report generated yet.</div></div></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" id="analytics">
+          <div class="dashboard-grid">
+            <div class="card panel">
+              <div class="panel-head">
+                <div>
+                  <h4>Thesis Volume by School Year</h4>
+                  <p>Reports for archived documents, yearly submissions, and research volume.</p>
+                </div>
+              </div>
+              <div class="chart" aria-label="Thesis volume chart">
+                <div class="axis"><span>100</span><span>80</span><span>60</span><span>40</span><span>20</span></div>
+                <div class="bar-group"><span style="height: 0%;"></span><span style="height: 0%;"></span></div>
+                <div class="bar-group"><span style="height: 0%;"></span><span style="height: 0%;"></span></div>
+                <div class="bar-group"><span style="height: 0%;"></span><span style="height: 0%;"></span></div>
+                <div class="bar-group"><span style="height: 0%;"></span><span style="height: 0%;"></span></div>
+                <div class="bar-group"><span style="height: 0%;"></span><span style="height: 0%;"></span></div>
+                <div class="bar-group"><span style="height: 0%;"></span><span style="height: 0%;"></span></div>
+              </div>
+            </div>
+            <div class="card panel">
+              <div class="panel-head">
+                <div>
+                  <h4>Research Category Reports</h4>
+                  <p>Distribution of manuscripts by academic discipline and system usage.</p>
+                </div>
+              </div>
+              <div class="list" id="categoryReports">
+                <div class="empty-state">Category reports will appear after manuscripts are added.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="view" id="security">
+          <div class="generic-grid">
+          <div class="card panel" data-role="admin" id="adminPanel">
+            <div class="panel-head">
+              <div>
+                <h4>Admin Management Console</h4>
+                <p>Manage accounts, assign faculty reviewers, and inspect system audit activity.</p>
+              </div>
+              <div class="split-actions"><span class="badge" id="adminRefreshStatus">Not loaded</span><button class="dark-btn" id="refreshAdminPanel" type="button">Refresh</button></div>
+            </div>
+            <div class="generic-grid">
+              <div>
+                <h5>User Accounts</h5>
+                <div class="table-wrap"><table><thead><tr><th>Name</th><th>Username</th><th>Role</th><th>Status</th><th>Action</th></tr></thead><tbody id="adminUsersBody"><tr><td colspan="5">Admin data will load after login.</td></tr></tbody></table></div>
+              </div>
+              <div>
+                <h5>Reviewer Assignment</h5>
+                <div class="list" id="reviewerAssignments"><div class="empty-state">No manuscripts awaiting assignment.</div></div>
+              </div>
+              <div>
+                <h5>Approved for Publication</h5>
+                <div class="list" id="publishQueue"><div class="empty-state">Approved theses will appear here for publication.</div></div>
+              </div>
+            </div>
+            <div>
+              <h5>Recent Audit Logs</h5>
+              <div class="list" id="adminAuditLogs"><div class="empty-state">Audit logs will load after login.</div></div>
+            </div>
+          </div>
+            <div class="card panel">
+              <div class="panel-head">
+                <div>
+                  <h4>Security and Access Control</h4>
+                  <p>Role-based access, MFA, backups, audit logs, preservation controls, and data privacy safeguards.</p>
+                </div>
+                <span class="badge good">Protected</span>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Control</th><th>Status</th><th>Purpose</th></tr></thead>
+                  <tbody>
+                    <tr><td>Role-Based Access Control</td><td><span class="badge good">Enabled</span></td><td>Separates student researcher, faculty, and administrator permissions.</td></tr>
+                    <tr><td>Multi-Factor Authentication</td><td><span class="badge warn" id="mfaStatus">Not configured</span></td><td>Protects your account with a six-digit authenticator code. <button class="light-btn" id="setupMfa" type="button">Set up MFA</button></td></tr>
+                    <tr><td>Encrypted Backup</td><td><span class="badge warn">Integration pending</span></td><td>Requires scheduled encrypted database and document backups.</td></tr>
+                    <tr><td>Audit Logging</td><td><span class="badge warn">Monitoring</span></td><td>Records uploads, revisions, approvals, downloads, and account changes.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="card panel">
+              <div class="panel-head">
+                <div>
+                  <h4>Policies and User Portals</h4>
+                  <p>Compliance and authorized access requirements from the proposal.</p>
+                </div>
+              </div>
+              <div class="compliance-list">
+                <div><strong>RA 10173</strong><span>Data Privacy Act of 2012</span></div>
+                <div><strong>RA 8293</strong><span>Intellectual Property Code</span></div>
+                <div><strong>Archival Control</strong><span>Appraisal, metadata, retention, and access review</span></div>
+                <div><strong>Student Researcher Portal</strong><span>Submit and monitor manuscripts</span></div>
+                <div><strong>Faculty Portal</strong><span>Review and approve documents</span></div>
+                <div><strong>Admin Portal</strong><span>Users, backups, reports, audit logs</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="heatmapModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="heatmapTitle">
+      <div class="modal-head">
+        <div>
+          <h4 id="heatmapTitle">Similarity Heatmap</h4>
+          <p>Review the stronger colored blocks first. Red and gold blocks indicate sections with higher similarity risk.</p>
+        </div>
+        <button class="modal-close" type="button" id="closeHeatmap" aria-label="Close heatmap">x</button>
+      </div>
+      <div class="heatmap-large" id="heatmapLarge"></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="archivedAnalysisModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="archivedAnalysisTitle">
+      <div class="modal-head">
+        <div>
+          <h4 id="archivedAnalysisTitle">Analyze Archived Manuscript</h4>
+          <p>Select an archived thesis to run the AI originality, citation, classification, and similarity checks again.</p>
+        </div>
+        <button class="modal-close" type="button" id="closeArchivedAnalysis" aria-label="Close archived analysis">x</button>
+      </div>
+      <div class="login-form">
+        <div id="archivedDepartmentTabs" class="department-tabs" role="tablist" aria-label="Filter archived manuscripts by department">
+          <button class="department-tab archived-department-tab active" type="button" role="tab" aria-selected="true" data-archived-department-tab="">All Departments</button>
+          <button class="department-tab archived-department-tab" type="button" role="tab" aria-selected="false" data-archived-department-tab="CCS">CCS</button>
+          <button class="department-tab archived-department-tab" type="button" role="tab" aria-selected="false" data-archived-department-tab="CED">CED</button>
+          <button class="department-tab archived-department-tab" type="button" role="tab" aria-selected="false" data-archived-department-tab="CBAA">CBAA</button>
+          <button class="department-tab archived-department-tab" type="button" role="tab" aria-selected="false" data-archived-department-tab="CCJE">CCJE</button>
+          <button class="department-tab archived-department-tab" type="button" role="tab" aria-selected="false" data-archived-department-tab="CN">CN</button>
+        </div>
+        <input class="field" id="archivedAnalysisSearch" type="search" placeholder="Search archived thesis, author, keyword..." />
+        <div class="archived-analysis-matches" id="archivedAnalysisMatches" aria-live="polite"></div>
+        <label for="archivedAnalysisSelect">Archived manuscript</label>
+        <select class="field" id="archivedAnalysisSelect">
+          <option value="">Select an archived manuscript</option>
+        </select>
+        <button class="dark-btn" type="button" id="runArchivedAnalysis">Analyze Selected Manuscript</button>
+        <div class="login-status" id="archivedAnalysisStatus" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="registerModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="registerTitle">
+      <div class="modal-head">
+        <div>
+          <h4 id="registerTitle">Register Account</h4>
+          <p>Create an account for Student Researcher access.</p>
+        </div>
+        <button class="modal-close" type="button" id="closeRegister" aria-label="Close registration">x</button>
+      </div>
+      <form class="login-form" id="registerForm">
+        <input class="field" id="registerName" type="text" placeholder="Full name" required />
+        <input class="field" id="registerUsername" type="text" placeholder="Username" autocomplete="username" required />
+        <input class="field" id="registerPassword" type="password" placeholder="Password" autocomplete="new-password" required />
+        <select class="field" id="registerRole" required>
+          <option value="">Register as</option>
+          <option value="student_researcher">Student Researcher</option>
+          <option value="faculty">Adviser / Faculty Reviewer</option>
+        </select>
+        <button class="dark-btn" type="submit">Register Account</button>
+        <div class="login-status" id="registerStatus" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="passwordResetModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="passwordResetTitle">
+      <div class="modal-head">
+        <div>
+          <h4 id="passwordResetTitle">Reset Password</h4>
+          <p>Request a secure reset link using your registered username.</p>
+        </div>
+        <button class="modal-close" type="button" id="closePasswordReset" aria-label="Close password reset">x</button>
+      </div>
+      <form class="login-form" id="passwordResetRequestForm">
+        <input class="field" id="resetUsername" type="text" placeholder="Username" autocomplete="username" required />
+        <button class="dark-btn" type="submit">Send Reset Instructions</button>
+        <div class="login-status" id="passwordResetRequestStatus" role="status" aria-live="polite"></div>
+      </form>
+      <form class="login-form hidden" id="passwordResetForm">
+        <input class="field" id="resetToken" type="text" placeholder="Reset token" autocomplete="one-time-code" required />
+        <input class="field" id="resetPassword" type="password" placeholder="New password (12+ characters)" autocomplete="new-password" minlength="12" required />
+        <input class="field" id="resetPasswordConfirm" type="password" placeholder="Confirm new password" autocomplete="new-password" minlength="12" required />
+        <button class="dark-btn" type="submit">Save New Password</button>
+        <div class="login-status" id="passwordResetStatus" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/react/department-tabs.js?v=20261124-1"></script>
+  <script src="app.js?v=20261124-1"></script>
+</body>
+</html>

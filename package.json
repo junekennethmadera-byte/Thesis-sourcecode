@@ -1,0 +1,39 @@
+{
+  "name": "ai-driven-edata-banking-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI-Driven E-Data Banking System for Thesis Manuscripts",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "build:react": "vite build",
+    "test": "node --test",
+    "migrate": "node backend/migrate.js",
+    "create-user": "node backend/create-user.js",
+    "reindex:search": "node backend/reindex-search.js",
+    "backup": "node backend/backup.js",
+    "backup:verify": "node backend/backup-verify.js",
+    "backup:restore": "node backend/restore.js",
+    "config:check": "node backend/config-check.js",
+    "predeploy": "node scripts/predeploy-check.js",
+    "workflow:smoke": "node scripts/workflow-smoke.js",
+    "password-reset:smoke": "node scripts/password-reset-smoke.js",
+    "adviser-registration:smoke": "node scripts/adviser-registration-smoke.js"
+  },
+  "dependencies": {
+    "@elastic/elasticsearch": "^9.5.1",
+    "@napi-rs/canvas": "^1.1.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "bcryptjs": "^3.0.2",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "openai": "^7.52.0",
+    "pdfjs-dist": "^6.5.438",
+    "pg": "^8.16.3",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tesseract.js": "^7.0.0",
+    "vite": "^8.3.8"
+  }
+}

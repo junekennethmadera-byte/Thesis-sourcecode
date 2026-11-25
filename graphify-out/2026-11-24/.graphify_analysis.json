@@ -1,0 +1,245 @@
+{
+  "communities": {
+    "0": [
+      "frontend_app",
+      "frontend_app_activitybody",
+      "frontend_app_analyzesubmission",
+      "frontend_app_classificationbadge",
+      "frontend_app_closeheatmap",
+      "frontend_app_closeregister",
+      "frontend_app_currentuserinitials",
+      "frontend_app_currentusername",
+      "frontend_app_currentuserrole",
+      "frontend_app_database",
+      "frontend_app_defaultheatmapscores",
+      "frontend_app_defaultusers",
+      "frontend_app_formstatus",
+      "frontend_app_heatmaplarge",
+      "frontend_app_heatmapmodal",
+      "frontend_app_heatmappreview",
+      "frontend_app_hideheatmap",
+      "frontend_app_hideregister",
+      "frontend_app_loaddatabase",
+      "frontend_app_loginform",
+      "frontend_app_loginstatus",
+      "frontend_app_logoutbutton",
+      "frontend_app_navbuttons",
+      "frontend_app_notificationbutton",
+      "frontend_app_notificationcount",
+      "frontend_app_notificationlist",
+      "frontend_app_notificationmenu",
+      "frontend_app_notificationtotal",
+      "frontend_app_openheatmap",
+      "frontend_app_openregister",
+      "frontend_app_pagecopy",
+      "frontend_app_readpdffile",
+      "frontend_app_registerform",
+      "frontend_app_registermodal",
+      "frontend_app_registerstatus",
+      "frontend_app_repositorylist",
+      "frontend_app_rolerestrictedelements",
+      "frontend_app_runprecheck",
+      "frontend_app_showheatmap",
+      "frontend_app_showregister",
+      "frontend_app_submissionform",
+      "frontend_app_title",
+      "frontend_app_views"
+    ],
+    "1": [
+      "backend_migrate",
+      "backend_migrate_bcrypt",
+      "backend_migrate_fs",
+      "backend_migrate_migrate",
+      "backend_migrate_path",
+      "backend_migrate_pool",
+      "ref_bcryptjs",
+      "ref_fs",
+      "ref_http",
+      "ref_path",
+      "ref_pg",
+      "serve_node",
+      "serve_node_fs",
+      "serve_node_http",
+      "serve_node_mime",
+      "serve_node_path",
+      "serve_node_root",
+      "serve_node_server"
+    ],
+    "2": [
+      "package",
+      "package_dependencies",
+      "package_dependencies_bcryptjs",
+      "package_dependencies_dotenv",
+      "package_dependencies_express",
+      "package_dependencies_jsonwebtoken",
+      "package_dependencies_pg",
+      "package_description",
+      "package_main",
+      "package_name",
+      "package_private",
+      "package_scripts",
+      "package_scripts_migrate",
+      "package_scripts_start",
+      "package_version",
+      "ref_dotenv",
+      "ref_express",
+      "ref_jsonwebtoken"
+    ],
+    "3": [
+      "backend_server",
+      "backend_server_app",
+      "backend_server_audit",
+      "backend_server_authenticate",
+      "backend_server_bcrypt",
+      "backend_server_express",
+      "backend_server_issuetoken",
+      "backend_server_jwt",
+      "backend_server_path",
+      "backend_server_pool",
+      "backend_server_port",
+      "backend_server_requirerole",
+      "backend_server_transitionmanuscript"
+    ],
+    "4": [
+      "frontend_app_addnotification",
+      "frontend_app_createpdfdownload",
+      "frontend_app_getheatcolor",
+      "frontend_app_renderheatmap",
+      "frontend_app_restoreaistate",
+      "frontend_app_runaiprecheck",
+      "frontend_app_savedatabase",
+      "frontend_app_setcount",
+      "frontend_app_setpercent",
+      "frontend_app_slugifyfilename",
+      "frontend_app_updatedashboard",
+      "frontend_app_updateheatmap",
+      "frontend_app_writeaudit"
+    ],
+    "5": [
+      "frontend_app_apirequest",
+      "frontend_app_createbadge",
+      "frontend_app_createworkflowaction",
+      "frontend_app_hasrole",
+      "frontend_app_hydratefromapi",
+      "frontend_app_rendernotifications",
+      "frontend_app_renderrecords",
+      "frontend_app_showview"
+    ],
+    "6": [
+      "frontend_app_applyroleaccess",
+      "frontend_app_applysession",
+      "frontend_app_formatrole",
+      "frontend_app_getinitials"
+    ],
+    "7": [
+      "serve"
+    ]
+  },
+  "cohesion": {
+    "0": 0.046511627906976744,
+    "1": 0.11764705882352941,
+    "2": 0.1111111111111111,
+    "3": 0.16666666666666666,
+    "4": 0.20512820512820512,
+    "5": 0.32142857142857145,
+    "6": 0.5,
+    "7": 1.0
+  },
+  "gods": [
+    {
+      "id": "frontend_app_runaiprecheck",
+      "label": "runAiPrecheck()",
+      "degree": 7
+    },
+    {
+      "id": "frontend_app_renderrecords",
+      "label": "renderRecords()",
+      "degree": 6
+    },
+    {
+      "id": "frontend_app_addnotification",
+      "label": "addNotification()",
+      "degree": 5
+    },
+    {
+      "id": "frontend_app_createworkflowaction",
+      "label": "createWorkflowAction()",
+      "degree": 5
+    },
+    {
+      "id": "frontend_app_hydratefromapi",
+      "label": "hydrateFromApi()",
+      "degree": 5
+    },
+    {
+      "id": "frontend_app_createpdfdownload",
+      "label": "createPdfDownload()",
+      "degree": 4
+    },
+    {
+      "id": "frontend_app_savedatabase",
+      "label": "saveDatabase()",
+      "degree": 4
+    },
+    {
+      "id": "frontend_app_setcount",
+      "label": "setCount()",
+      "degree": 4
+    },
+    {
+      "id": "frontend_app_setpercent",
+      "label": "setPercent()",
+      "degree": 4
+    },
+    {
+      "id": "frontend_app_updatedashboard",
+      "label": "updateDashboard()",
+      "degree": 4
+    }
+  ],
+  "surprises": [
+    {
+      "source": "addNotification()",
+      "target": "renderNotifications()",
+      "source_files": [
+        "frontend/app.js",
+        "frontend/app.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "note": "Bridges community 4 → community 5"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `bcryptjs` connect `migrate.js` to `package.json`, `server.js`?",
+      "why": "High betweenness centrality (0.029) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `dotenv` to the rest of the system?",
+      "why": "1 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `app.js` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.046511627906976744 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `pg` connect `migrate.js` to `package.json`, `server.js`?",
+      "why": "High betweenness centrality (0.029) - this node is a cross-community bridge."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `migrate.js` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `package.json` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected."
+    }
+  ]
+}
